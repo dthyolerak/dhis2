@@ -1,0 +1,62 @@
+.patients-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    flex-direction: column;
+    margin: .5rem auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    height: 100%;
+}
+.patients-container,
+.search-patients{
+    display: flex;
+    width: 95%;
+    margin: 1rem .5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid #ddd;
+    justify-content: center;
+    align-items: center;
+}
+.search-patients input{
+    width: 100%;
+    display: flex;
+    padding: 10px 10px;
+    border: none;
+    outline: #ddd;
+}
+.search-patients button{
+    display: flex;
+    padding: 10px 15px;
+    outline: none;
+    transition: all .3s;
+    background:  #0303c7;
+    color: #ddd;
+    font-size: 18px;
+    border:  none;
+}
+.search-patients button:hover{
+    background: #fff;
+    color: #0303c7;
+    border: 1px solid #0303c7;
+    cursor: pointer;
+}
+.missed{
+    color: red;
+    background: rgb(172, 148, 148);
+}
+.attend{
+    color: #fff;
+    background: darkgreen;
+}
+.viewDetails{
+    background-color: #ddd;
+    border-bottom: 1px solid #fff;
+    transition: all .4s ease-in-out;
+}
+.viewDetails:hover{
+    background: #0303c7;
+    cursor: pointer;
+    color: #fff;
+}
