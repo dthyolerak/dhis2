@@ -1,8 +1,4 @@
-@tailwind base;
 
-@tailwind components;
-
-@tailwind utilities;
 
 .app{
     
@@ -13,6 +9,27 @@
     display: flex;
 }
 
+.title{
+    color: #302e2e;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+.sub-title{
+    color: #302e2e;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.patients-cont,
+.reminder-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    flex-direction: column;
+    margin: .5rem auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    height: 100%;
+}
 .contentWrapper{
     width: 100%;
 }

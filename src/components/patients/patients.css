@@ -1,13 +1,5 @@
-.patients-cont{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    flex-direction: column;
-    margin: .5rem auto;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    height: 100%;
-}
+
+
 .patients-container,
 .search-patients{
     display: flex;
