@@ -28,6 +28,12 @@
     background: darkblue;
     color: azure;
     margin: 1rem .1rem;
+    transition: all .3s;
+}
+.submit:hover{
+    background: #fff;
+    color: darkblue;
+    border:  1px solid darkblue;
 }
 .fields label{
     padding: 10px 10px;
