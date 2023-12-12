@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@dhis2/app-runtime": "^3.9.4",
+    "@dhis2/ui": "^9.0.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.20",
     "react-router-dom": "^6.20.1"
-  },
-  "peerDependencies": {}
+  }
 }

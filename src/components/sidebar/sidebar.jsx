@@ -1,9 +1,28 @@
 import React from "react";
 import "./sidebar.css";
 import { NavLink } from "react-router-dom";
+import { useDataQuery } from "@dhis2/app-runtime";
 
+
+const myQuery = {
+  results: {
+    resource: 'programs',
+    params: {
+      fields: ['id', 'displayName'],
+    }
+  }
+}
 const Sidebar = () => {
-  const options = ["Option 1", "Option 2", "Option 3", "Option 4"]; // List of options
+  const { loading, error, data } = useDataQuery(myQuery)
+
+    if (error) {
+        return <span>ERROR: {error.message}</span>
+    }
+
+    if (loading) {
+        return <span>Loading...</span>
+    }
+  // const options = ["Option 1", "Option 2", "Option 3", "Option 4"]; // List of options
 
   return (
     <div className="sidebar">
@@ -19,9 +38,11 @@ const Sidebar = () => {
 
       <section>
         <h2 className="sidebarHeader">Programs</h2>
+
         <ul>
-          {options.map((option, index) => (
-            <li className="listItem"  key={index}>{option}</li>
+          {/* render a list of programs */}
+          {data.results.programs.map((prog) => (
+            <li className="listItem"  key={prog.id}>{prog.displayName}</li>
           ))}
         </ul>
       </section>
