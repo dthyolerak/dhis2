@@ -6,15 +6,28 @@ const Appointment = () => {
   return (
     <div className="appointmentWrapper">
       <p>Appointments</p>
-
-      <form action="">
-        <input type="text" />
-        <input type="submit" />
+      <form className="searchForm" action="">
+        <input type="text" placeholder="Patient ID"/>
+        <input className="searchBtn" type="submit" value="Search" />
       </form>
-
       <div className="table">
-      <BasicTable/>
+        <BasicTable />
       </div>
+      <p>Modify Appointment Status</p>
+      <form className="modifyForm" action="">
+        <div className="modifyFormCol1">
+        <input type="text" placeholder="Patients ID" />
+        <select className="statusBtn" name="" id="">
+          <option className="statusOptionP" value="">Pending</option>
+          <option className="statusOptionM" value="">Missed</option>
+          <option className="statusOptionA" value="">Attended</option>
+        </select>
+        </div>
+        <div className="modifyFormCol2">
+          <input className="modifyBtn" type="submit" value="Modify" />
+        </div>
+        
+      </form>
     </div>
   );
 };
