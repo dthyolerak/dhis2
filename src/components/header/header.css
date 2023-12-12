@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2C6693;
+  border-top:2px solid #1D3461 ;
+  color: white;
+  padding-left: 10px;
+}
+
+.logo{
+    font-size: 1.5rem;
+}
+
+.header__left {
+  flex: 1; /* Makes the left part grow, pushing other components to the right */
+}

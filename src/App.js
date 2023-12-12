@@ -1,18 +1,22 @@
-import React from 'react'
-import { DataQuery } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
-import classes from './App.module.css'
-import { Welcome } from './components/welcome/Welcome'
+import React from "react";
+import "./home.css";
+import { Welcome } from "./components/welcome/Welcome";
+import Reminder from "./components/reminder/reminder";
+import Appointment from "./components/appointments/appointments";
+import Patients from "./components/patients/patients";
+import Header from "./components/header/header";
+import Sidebar from "./components/sidebar/sidebar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const query = {
-    me: {
-        resource: 'me',
-    },
-}
+  me: {
+    resource: "me",
+  },
+};
 
 const MyApp = () => (
-    <div className={classes.container}>
-        {/* <DataQuery query={query}>
+  <BrowserRouter className="app">
+    {/* <DataQuery query={query}>
             {({ error, loading, data }) => {
                 if (error) return <span>ERROR</span>
                 if (loading) return <span>...</span>
@@ -26,8 +30,19 @@ const MyApp = () => (
                 )
             }}
         </DataQuery> */}
-        <Welcome/>
+    {/* <Header /> */}
+    <div className="homeContainer">
+      <Sidebar />
+      <div className="contentWrapper">
+        <Routes>
+          <Route index element={<Welcome/> } />
+          <Route path="/reminder" element={<Reminder/>} />
+          <Route path="/appointment" element={<Appointment/>} />
+          <Route path="/patients" element={<Patients/>} />
+        </Routes>
+      </div>
     </div>
-)
+  </BrowserRouter>
+);
 
-export default MyApp
+export default MyApp;
