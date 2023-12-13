@@ -5,10 +5,10 @@ import BasicTable from "./basicTable";
 const Appointment = () => {
   return (
     <div className="appointmentWrapper">
-      <p>Appointments</p>
+      <h1 className="title">Appointments</h1>
       <form className="searchForm" action="">
         <input type="text" placeholder="Patient ID"/>
-        <input className="searchBtn" type="submit" value="Search" />
+        <button>Search</button>
       </form>
       <div className="table">
         <BasicTable />

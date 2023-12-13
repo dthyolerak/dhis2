@@ -10,7 +10,7 @@ const Reminder = () => {
           <h2 className='sub-title'>SMS Reminder</h2>
           <div className="fields">
             <label htmlFor="">Phone</label>
-            <input type="text" />
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
           </div>
           <div className="fields">
             <label htmlFor="">Select Date</label>
@@ -33,7 +33,7 @@ const Reminder = () => {
           <h2 className='sub-title'>Email Reminder</h2>
           <div className="fields">
             <label htmlFor="">Email</label>
-            <input type="text" />
+            <input type="email" />
           </div>
           <div className="fields">
             <label htmlFor="">Select Date</label>

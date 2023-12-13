@@ -12,24 +12,64 @@
 .title{
     color: #302e2e;
     text-transform: capitalize;
-    font-size: 22px;
+    font-size: 1rem;
+    margin: 1rem .5rem;
 }
 .sub-title{
     color: #302e2e;
     text-transform: capitalize;
     font-size: 18px;
 }
+.appointmentWrapper,
 .patients-cont,
 .reminder-cont{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     width: 95%;
     flex-direction: column;
     margin: .5rem auto;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     height: 100%;
+    padding: 10px 10px;
 }
 .contentWrapper{
     width: 100%;
+}
+
+/* search */
+.searchForm,
+.patients-container,
+.search-patients{
+    display: flex;
+    width: 95%;
+    margin: 1rem .5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid #ddd;
+    justify-content: left;
+}
+.searchForm  input,
+.search-patients input{
+    width: 100%;
+    display: flex;
+    padding: 10px 10px;
+    border: none;
+    outline: #ddd;
+}
+.searchForm button,
+.search-patients button{
+    display: flex;
+    padding: 10px 15px;
+    outline: none;
+    transition: all .3s;
+    background:  #0303c7;
+    color: #ddd;
+    font-size: 18px;
+    border:  none;
+}
+.search-patients button:hover{
+    background: #fff;
+    color: #0303c7;
+    border: 1px solid #0303c7;
+    cursor: pointer;
 }

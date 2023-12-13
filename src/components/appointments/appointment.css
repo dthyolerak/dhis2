@@ -1,8 +1,4 @@
-.appointmentWrapper{
-    margin-left: 1em;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .appointmentWrapper p{
     font-size: 1rem;

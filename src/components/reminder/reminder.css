@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .form{
@@ -10,7 +10,7 @@
     justify-content: right;
     align-items: center;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 520px;
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px 10px;

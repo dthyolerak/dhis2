@@ -1,46 +1,13 @@
 
 
-.patients-container,
-.search-patients{
-    display: flex;
-    width: 95%;
-    margin: 1rem .5rem;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border: 1px solid #ddd;
-    justify-content: center;
-    align-items: center;
-}
-.search-patients input{
-    width: 100%;
-    display: flex;
-    padding: 10px 10px;
-    border: none;
-    outline: #ddd;
-}
-.search-patients button{
-    display: flex;
-    padding: 10px 15px;
-    outline: none;
-    transition: all .3s;
-    background:  #0303c7;
-    color: #ddd;
-    font-size: 18px;
-    border:  none;
-}
-.search-patients button:hover{
-    background: #fff;
-    color: #0303c7;
-    border: 1px solid #0303c7;
-    cursor: pointer;
-}
+
 .missed{
     color: red;
     background: rgb(172, 148, 148);
 }
 .attend{
     color: #fff;
-    background: darkgreen;
+    background: rgba(0, 0, 139, 0.5);
 }
 .viewDetails{
     background-color: #ddd;
