@@ -13,10 +13,10 @@ const Appointment = () => {
       <div className="table">
         <BasicTable />
       </div>
-      <p>Modify Appointment Status</p>
+      <h1 className="title">Modify Appointment Status</h1>
       <form className="modifyForm" action="">
         <div className="modifyFormCol1">
-        <input type="text" placeholder="Patients ID" />
+        <input className="modify-id" type="text" placeholder="Patients ID" />
         <select className="statusBtn" name="" id="">
           <option className="statusOptionP" value="">Pending</option>
           <option className="statusOptionM" value="">Missed</option>

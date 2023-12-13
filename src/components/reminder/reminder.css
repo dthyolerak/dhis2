@@ -10,38 +10,10 @@
     justify-content: right;
     align-items: center;
     flex-direction: column;
-    max-width: 520px;
+    max-width: 510px;
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px 10px;
     border-radius:  9px;
     margin: .4rem .3rem;
-}
-.fields{
-    display: flex;
-    width: 100%;
-    justify-content: left;
-    width: 100%;
-    flex-direction: column;
-}
-.submit{
-    background: darkblue;
-    color: azure;
-    margin: 1rem .1rem;
-    transition: all .3s;
-}
-.submit:hover{
-    background: #fff;
-    color: darkblue;
-    border:  1px solid darkblue;
-}
-.fields label{
-    padding: 10px 10px;
-}
-.fields textarea,
-.fields input{
-    padding: 10px 10px;
-    border: 1px solid #ccc;
-    border-radius: 9px;
-    outline: darkblue;
 }
