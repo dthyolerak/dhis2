@@ -7,7 +7,7 @@ import Patients from "./components/patients/patients";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Enroll from "./components/enroll/enroll";
 const query = {
   me: {
     resource: "me",
@@ -39,6 +39,7 @@ const MyApp = () => (
           <Route path="/reminder" element={<Reminder/>} />
           <Route path="/appointment" element={<Appointment/>} />
           <Route path="/patients" element={<Patients/>} />
+          <Route path="/enroll-patients" element={<Enroll/>} />
         </Routes>
       </div>
     </div>

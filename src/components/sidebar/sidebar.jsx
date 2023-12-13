@@ -32,20 +32,11 @@ const Sidebar = () => {
           <NavLink className="listItem menuItem" to="./patients">Patient</NavLink>
           <NavLink className="listItem menuItem"  to="./reminder">Reminder</NavLink>
           <NavLink className="listItem menuItem"  to="./appointment">Appointment</NavLink>
+          <NavLink className="listItem menuItem"  to="./enroll-patients">Enroll Patients</NavLink>
           
         </ul>
       </section>
 
-      <section>
-        <h2 className="sidebarHeader">Programs</h2>
-
-        <ul>
-          {/* render a list of programs */}
-          {data.results.programs.map((prog) => (
-            <li className="listItem"  key={prog.id}>{prog.displayName}</li>
-          ))}
-        </ul>
-      </section>
     </div>
   );
 };
