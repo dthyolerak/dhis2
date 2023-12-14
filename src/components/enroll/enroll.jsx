@@ -21,16 +21,23 @@ const Enroll = () => {
     }
   return (
     <div className='reminder-cont'>
-      <h1 className="title">Enroll Patient</h1>
+      
       <div className="reminder-forms">
-        <form action="" className='form'>
+        
+        <form action="" className='form enroll' style={{margin:"auto"}}>
+        <h1 className="title">Enroll Patient</h1>
           <div className="fields">
             <label htmlFor="">Full Name</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+            <input type="text" id="full_name" name="full_name" placeholder='Full name' required />
+          </div>
+          
+          <div className="fields">
+            <label htmlFor="">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder='Phone number' required />
           </div>
           <div className="fields">
-            <label htmlFor="">Select Date</label>
-            <input type="date" />
+            <label htmlFor="">Email</label>
+            <input type="email" id="email" name="email" placeholder='Email' required />
           </div>
           <div className="fields">
             <label htmlFor=""> Select program</label>
@@ -44,9 +51,10 @@ const Enroll = () => {
         </select>
           </div>
           <div className="fields">
-            <label htmlFor="">Message</label>
-            <textarea name="" id="" cols="10" rows="5"></textarea>
+            <label htmlFor="">Select Date</label>
+            <input type="date" />
           </div>
+          
           <div className="fields">
           <input className='submit' type="submit"  value={"Submit"}/>
           </div>

@@ -8,6 +8,7 @@ import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Enroll from "./components/enroll/enroll";
+import Demo from "./components/enroll/demo";
 const query = {
   me: {
     resource: "me",
@@ -40,6 +41,7 @@ const MyApp = () => (
           <Route path="/appointment" element={<Appointment/>} />
           <Route path="/patients" element={<Patients/>} />
           <Route path="/enroll-patients" element={<Enroll/>} />
+          <Route path="/enroll-demo" element={<Demo/>} />
         </Routes>
       </div>
     </div>
