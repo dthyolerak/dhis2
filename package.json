@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "d2-app-scripts build",
-    "start": "d2-app-scripts start --proxy https://play.dhis2.org/40.2.0",
+    "start": "d2-app-scripts start --proxy http://localhost:8080/",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
@@ -18,6 +18,8 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.20",
+    "axios": "^1.6.2",
+    "d2": "^31.10.2",
     "react-router-dom": "^6.20.1"
   }
 }

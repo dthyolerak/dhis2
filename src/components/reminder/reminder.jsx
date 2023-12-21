@@ -9,23 +9,25 @@ const Reminder = () => {
       setLoading(true);
 
       // Replace with your DHIS2 API endpoint for scheduling a job
-      const apiUrl = 'https://43ba-105-234-160-36.ngrok-free.app/api/scheduler';
+      const apiUrl = 'http://localhost:8080/api/jobConfigurations';
 
       // Replace with the details of your reminder job
       const reminderJobDetails = {
-        type: 'REMINDER_JOB_TYPE',
-        name: 'Reminder Job',
+        type: 'Thyolers',
+        name: 'Thyolers Job',
         description: 'Scheduled job for sending reminders to patients',
         cronExpression: '0 0 12 * * ?', 
         
       };
-
+      const accessToken = 'thyolera';
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Include any necessary authentication headers
-          'Authorization': '03a92f3c9-2e76-2d75-1a15-eee44790c70',
+          //  authentication headers
+          // 'Authorization': `Bearer ${accessToken}`
+          Authorization: 'Basic ' + btoa('admin:district'),
+          
         },
         body: JSON.stringify(reminderJobDetails),
       });
