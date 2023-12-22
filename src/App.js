@@ -35,7 +35,6 @@ const MyApp = () => (
         <Routes>
           <Route index element={<Welcome/> } />
           <Route path="/reminder" element={<Reminder/>} />
-          <Route path="/appointment" element={<Appointment/>} />
           <Route path="/patients" element={<Patients/>} />
           <Route path="/enroll-patients" element={<Enroll/>} />
         </Routes>
