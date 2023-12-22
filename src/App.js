@@ -9,6 +9,9 @@ import Enroll from "./components/enroll/enroll";
 import ReminderComponent from "./components/enroll/ReminderComponent";
 import { DataProvider } from '@dhis2/app-runtime';
 
+const config = {
+  baseUrl: 'https://play.dhis2.org/2.38.5/api/',
+};
 
 const query = {
   me: {
@@ -18,6 +21,7 @@ const query = {
 
 const MyApp = () => (
   <BrowserRouter className="app">
+    <DataProvider config={config}>
       <div className="homeContainer">
         <Sidebar />
         <div className="contentWrapper">
@@ -30,6 +34,7 @@ const MyApp = () => (
           </Routes>
         </div>
       </div>
+    </DataProvider>
   </BrowserRouter>
 );
 
