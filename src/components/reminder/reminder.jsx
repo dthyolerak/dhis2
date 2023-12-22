@@ -81,7 +81,7 @@ const Reminder = () => {
           </div>
           
         </form>
-        <form action="" className='form'>
+        {/* <form action="" className='form'>
           <h2 className='sub-title'>Email Reminder</h2>
           <div className="fields">
             <label htmlFor="">Email</label>
@@ -103,7 +103,7 @@ const Reminder = () => {
           <input className='submit' type="submit"  value={"Submit"}/>
           </div>
           
-        </form>
+        </form> */}
       </div>
         
     </div>
