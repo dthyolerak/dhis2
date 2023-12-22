@@ -18,7 +18,7 @@ const query = {
 
 const Patients = () => {
   return (
-    <div>
+    <div className="patients-cont">
       <DataQuery query={query}>
         {({ error, loading, data }) => {
           if (error) {
