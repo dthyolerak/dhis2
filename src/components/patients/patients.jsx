@@ -1,71 +1,79 @@
 import React from "react";
 import "./patients.css";
+import { DataQuery } from "@dhis2/app-runtime";
+
+const trackedEntityTypeId = "rGEGchYDTGG";
+const orgUnitId = "DiszpKrYNg8";
+
+const query = {
+  patientsInProgram: {
+    resource: "trackedEntityInstances",
+    params: {
+      fields: "trackedEntityInstance,attributes[attribute,displayName,value]",
+      ou: orgUnitId,
+      trackedEntityType: trackedEntityTypeId,
+    },
+  },
+};
 
 const Patients = () => {
-  return <div className="patients-cont">
-    <h1 className="title">Patients Details</h1>
-    <form className="search-patients">
-      <input type="search" name="" id="" />
-      <button>Search</button>
-    </form>
-    <div className="patients-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Message</th>
-            <th>Recipients</th>
-            <th>Date</th>
-            <th>Status</th>
-            {/* <th>Action</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="missed">Missed</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-            <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="attended">attended</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-            <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="attended">attended</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-            <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="attended">attended</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-            <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="missed">Missed</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-            <tr >
-              <td>Hello there</td>
-              <td>0993585213</td>
-              <td>27 May 2015: 8:30AM</td>
-              <td className="attended">attended</td>
-              {/* <td className="viewDetails">View Details</td> */}
-            </tr>
-        </tbody>
-      </table>
+  return (
+    <div>
+      <DataQuery query={query}>
+        {({ error, loading, data }) => {
+          if (error) {
+            return <span>ERROR: {error.message}</span>;
+          }
+          if (loading) {
+            return <span>Loading...</span>;
+          }
+
+          const patientsInProgram =
+            data.patientsInProgram?.trackedEntityInstances || []; // Ensure it's an array
+
+          if (!Array.isArray(patientsInProgram)) {
+            return <span>Patients data is not in the expected format.</span>;
+          }
+
+          return (
+            <table className="patients-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Gender</th>
+                  <th>Phone Number</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {patientsInProgram.map((patient) => (
+                  <tr key={patient.trackedEntityInstance}>
+                    <td>{patient.trackedEntityInstance}</td>
+                    {patient.attributes.map((attribute) => {
+                      switch (attribute.displayName) {
+                        case "Gender":
+                        case "Phone number":
+                        case "First name":
+                        case "Last name":
+                          return (
+                            <td key={attribute.attribute}>
+                              {attribute.value}
+                            </td>
+                          );
+                        default:
+                          return null;
+                      }
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          );
+        }}
+      </DataQuery>
     </div>
-  </div>;
+  );
 };
 
 export default Patients;

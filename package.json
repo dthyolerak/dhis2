@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "d2-app-scripts build",
-    "start": "d2-app-scripts start --proxy https://272b-105-234-160-8.ngrok-free.app/dhis2",
+    "start": "d2-app-scripts start --proxy https://play.dhis2.org/2.38.5",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
