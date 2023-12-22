@@ -6,6 +6,12 @@ import Patients from "./components/patients/patients";
 import Sidebar from "./components/sidebar/sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Enroll from "./components/enroll/enroll";
+import ReminderComponent from "./components/enroll/ReminderComponent";
+import { DataProvider } from '@dhis2/app-runtime';
+const config = {
+  //  instance configuration here
+  baseUrl: 'https://play.dhis2.org/40.2.0',
+};
 const query = {
   me: {
     resource: "me",
@@ -14,6 +20,7 @@ const query = {
 
 const MyApp = () => (
   <BrowserRouter className="app">
+     <DataProvider config={config}>
     {/* <DataQuery query={query}>
             {({ error, loading, data }) => {
                 if (error) return <span>ERROR</span>
@@ -37,9 +44,11 @@ const MyApp = () => (
           <Route path="/reminder" element={<Reminder/>} />
           <Route path="/patients" element={<Patients/>} />
           <Route path="/enroll-patients" element={<Enroll/>} />
+          <Route path="/enroll-demo" element={<ReminderComponent/>} />
         </Routes>
       </div>
     </div>
+    </DataProvider>
   </BrowserRouter>
 );
 

@@ -14,9 +14,14 @@
     "@dhis2/cli-app-scripts": "^10.3.10"
   },
   "dependencies": {
-    "@dhis2/app-runtime": "^3.9.4",
+    "@dhis2/app-runtime": "^3.10.1",
+    "@dhis2/ui": "^9.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.20",
+    "axios": "^1.6.2",
+    "base-64": "^1.0.0",
+    "d2": "^31.10.2",
     "react-router-dom": "^6.20.1"
   }
 }
