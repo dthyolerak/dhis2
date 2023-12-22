@@ -36,35 +36,41 @@ const Patients = () => {
             return <span>Patients data is not in the expected format.</span>;
           }
 
+          // Extract all unique attribute names
+          const allAttributes = patientsInProgram.reduce((attributes, patient) => {
+            patient.attributes.forEach((attribute) => {
+              if (!attributes.includes(attribute.displayName)) {
+                attributes.push(attribute.displayName);
+              }
+            });
+            return attributes;
+          }, []);
+
+          console.log(data);
+
           return (
             <table className="patients-table">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Gender</th>
-                  <th>Phone Number</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
+                  {allAttributes.map((attributeName) => (
+                    <th key={attributeName}>{attributeName}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
                 {patientsInProgram.map((patient) => (
                   <tr key={patient.trackedEntityInstance}>
                     <td>{patient.trackedEntityInstance}</td>
-                    {patient.attributes.map((attribute) => {
-                      switch (attribute.displayName) {
-                        case "Gender":
-                        case "Phone number":
-                        case "First name":
-                        case "Last name":
-                          return (
-                            <td key={attribute.attribute}>
-                              {attribute.value}
-                            </td>
-                          );
-                        default:
-                          return null;
-                      }
+                    {allAttributes.map((attributeName) => {
+                      const matchingAttribute = patient.attributes.find(
+                        (attribute) => attribute.displayName === attributeName
+                      );
+                      return (
+                        <td key={attributeName}>
+                          {matchingAttribute ? matchingAttribute.value : '-'}
+                        </td>
+                      );
                     })}
                   </tr>
                 ))}
